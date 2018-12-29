@@ -45,6 +45,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomMessageBox.Designer.cs">
+      <DependentUpon>CustomMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBuscarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarCliente.Designer.cs">
+      <DependentUpon>frmBuscarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCrearCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCrearCliente.Designer.cs">
+      <DependentUpon>frmCrearCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmListaReservas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,8 +99,23 @@
     <Compile Include="frmReservarCita.Designer.cs">
       <DependentUpon>frmReservarCita.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmVerHorarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVerHorarios.Designer.cs">
+      <DependentUpon>frmVerHorarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CustomMessageBox.resx">
+      <DependentUpon>CustomMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarCliente.resx">
+      <DependentUpon>frmBuscarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCrearCliente.resx">
+      <DependentUpon>frmCrearCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmListaReservas.resx">
       <DependentUpon>frmListaReservas.cs</DependentUpon>
     </EmbeddedResource>
@@ -100,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmReservarCita.resx">
       <DependentUpon>frmReservarCita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVerHorarios.resx">
+      <DependentUpon>frmVerHorarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

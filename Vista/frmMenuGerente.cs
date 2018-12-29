@@ -32,8 +32,11 @@ namespace Vista
             child.Dock = DockStyle.Fill;
             if (this.panelContenedor.Controls.Count > 0)
             {
-                MessageBox.Show("Primero debe cerrar la ventana que tiene abierta," +
+                CustomMessageBox frm = new CustomMessageBox("Primero debe cerrar la ventana que tiene abierta," +
                     " antes de poder abrir otra", "Mensaje de advertencia");
+                frm.ShowDialog();
+                //MessageBox.Show("Primero debe cerrar la ventana que tiene abierta," +
+                //    " antes de poder abrir otra", "Mensaje de advertencia");
             }
             else
             {

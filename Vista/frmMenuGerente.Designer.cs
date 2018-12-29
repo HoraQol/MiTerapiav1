@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenuGerente));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnReporteMensual = new System.Windows.Forms.Button();
+            this.btnReporteDiario = new System.Windows.Forms.Button();
             this.btnCrearReserva = new System.Windows.Forms.Button();
             this.btnListaReservas = new System.Windows.Forms.Button();
             this.pbxLogo = new System.Windows.Forms.PictureBox();
@@ -44,8 +46,6 @@
             this.btnMaximizar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
-            this.btnReporteDiario = new System.Windows.Forms.Button();
-            this.btnReporteMensual = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).BeginInit();
             this.panelTitulo.SuspendLayout();
@@ -72,6 +72,40 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(200, 600);
             this.panelMenu.TabIndex = 0;
+            // 
+            // btnReporteMensual
+            // 
+            this.btnReporteMensual.FlatAppearance.BorderSize = 0;
+            this.btnReporteMensual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReporteMensual.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporteMensual.ForeColor = System.Drawing.Color.White;
+            this.btnReporteMensual.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReporteMensual.Location = new System.Drawing.Point(40, 150);
+            this.btnReporteMensual.Name = "btnReporteMensual";
+            this.btnReporteMensual.Size = new System.Drawing.Size(160, 25);
+            this.btnReporteMensual.TabIndex = 8;
+            this.btnReporteMensual.Text = "Reporte mensual";
+            this.btnReporteMensual.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReporteMensual.UseVisualStyleBackColor = true;
+            this.btnReporteMensual.Visible = false;
+            this.btnReporteMensual.Click += new System.EventHandler(this.btnReporteMensual_Click);
+            // 
+            // btnReporteDiario
+            // 
+            this.btnReporteDiario.FlatAppearance.BorderSize = 0;
+            this.btnReporteDiario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReporteDiario.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporteDiario.ForeColor = System.Drawing.Color.White;
+            this.btnReporteDiario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReporteDiario.Location = new System.Drawing.Point(40, 150);
+            this.btnReporteDiario.Name = "btnReporteDiario";
+            this.btnReporteDiario.Size = new System.Drawing.Size(160, 25);
+            this.btnReporteDiario.TabIndex = 7;
+            this.btnReporteDiario.Text = "Reporte diario";
+            this.btnReporteDiario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReporteDiario.UseVisualStyleBackColor = true;
+            this.btnReporteDiario.Visible = false;
+            this.btnReporteDiario.Click += new System.EventHandler(this.btnReporteDiario_Click);
             // 
             // btnCrearReserva
             // 
@@ -173,7 +207,7 @@
             this.btnReserva.Name = "btnReserva";
             this.btnReserva.Size = new System.Drawing.Size(200, 25);
             this.btnReserva.TabIndex = 0;
-            this.btnReserva.Text = "Reserva de citas";
+            this.btnReserva.Text = "Gestión de Citas";
             this.btnReserva.UseVisualStyleBackColor = true;
             this.btnReserva.Click += new System.EventHandler(this.btnReserva_Click);
             // 
@@ -254,46 +288,12 @@
             // 
             // panelContenedor
             // 
-            this.panelContenedor.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelContenedor.BackColor = System.Drawing.Color.White;
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(200, 30);
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(1000, 570);
             this.panelContenedor.TabIndex = 2;
-            // 
-            // btnReporteDiario
-            // 
-            this.btnReporteDiario.FlatAppearance.BorderSize = 0;
-            this.btnReporteDiario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReporteDiario.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReporteDiario.ForeColor = System.Drawing.Color.White;
-            this.btnReporteDiario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReporteDiario.Location = new System.Drawing.Point(40, 150);
-            this.btnReporteDiario.Name = "btnReporteDiario";
-            this.btnReporteDiario.Size = new System.Drawing.Size(160, 25);
-            this.btnReporteDiario.TabIndex = 7;
-            this.btnReporteDiario.Text = "Reporte diario";
-            this.btnReporteDiario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReporteDiario.UseVisualStyleBackColor = true;
-            this.btnReporteDiario.Visible = false;
-            this.btnReporteDiario.Click += new System.EventHandler(this.btnReporteDiario_Click);
-            // 
-            // btnReporteMensual
-            // 
-            this.btnReporteMensual.FlatAppearance.BorderSize = 0;
-            this.btnReporteMensual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReporteMensual.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReporteMensual.ForeColor = System.Drawing.Color.White;
-            this.btnReporteMensual.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReporteMensual.Location = new System.Drawing.Point(40, 150);
-            this.btnReporteMensual.Name = "btnReporteMensual";
-            this.btnReporteMensual.Size = new System.Drawing.Size(160, 25);
-            this.btnReporteMensual.TabIndex = 8;
-            this.btnReporteMensual.Text = "Reporte mensual";
-            this.btnReporteMensual.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReporteMensual.UseVisualStyleBackColor = true;
-            this.btnReporteMensual.Visible = false;
-            this.btnReporteMensual.Click += new System.EventHandler(this.btnReporteMensual_Click);
             // 
             // frmMenuGerente
             // 

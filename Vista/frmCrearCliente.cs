@@ -11,41 +11,30 @@ using System.Runtime.InteropServices;
 
 namespace Vista
 {
-    public partial class frmLogin : Form
+    public partial class frmCrearCliente : Form
     {
-        public frmLogin()
+        public frmCrearCliente()
         {
             this.StartPosition = FormStartPosition.CenterScreen;
+
             InitializeComponent();
         }
 
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.dll", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hand, 
+        private extern static void SendMessage(System.IntPtr hand,
             int wmsg, int wparam, int lparam);
-
-        private void btnIni_Click(object sender, EventArgs e)
-        {
-            frmMenuGerente frm = new frmMenuGerente();
-            frm.Show();
-            this.Dispose();
-        }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Dispose();
         }
 
         private void panelTitulo_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-
-        private void btnMinimizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
