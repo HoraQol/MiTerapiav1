@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace Vista
 {
@@ -14,8 +15,14 @@ namespace Vista
     {
         public frmLogin()
         {
+            this.StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
         }
+
+        [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.dll", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hand, int wmsg, int wparam, int lparam);
 
         private void btnIni_Click(object sender, EventArgs e)
         {
@@ -26,7 +33,18 @@ namespace Vista
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            Application.Exit();
+        }
+
+        private void panelTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

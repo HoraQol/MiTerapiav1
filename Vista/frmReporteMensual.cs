@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Vista
 {
-    public partial class frmReservarCita : Form
+    public partial class frmReporteMensual : Form
     {
-        public frmReservarCita()
+        public frmReporteMensual()
         {
             InitializeComponent();
         }
