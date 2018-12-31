@@ -33,10 +33,8 @@ namespace Vista
             if (this.panelContenedor.Controls.Count > 0)
             {
                 CustomMessageBox frm = new CustomMessageBox("Primero debe cerrar la ventana que tiene abierta," +
-                    " antes de poder abrir otra", "Mensaje de advertencia");
+                    " antes de poder abrir otra.", "Mensaje de advertencia", 1);
                 frm.ShowDialog();
-                //MessageBox.Show("Primero debe cerrar la ventana que tiene abierta," +
-                //    " antes de poder abrir otra", "Mensaje de advertencia");
             }
             else
             {
