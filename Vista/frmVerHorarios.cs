@@ -22,7 +22,6 @@ namespace Vista
             InitializeComponent();
             llenarTerap();
             llenarHorario();
-            dtpHasta.MinDate = dtpDesde.Value.AddDays(1);
         }
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -84,6 +83,11 @@ namespace Vista
             dtpHasta.Value = dtpHasta.Value.AddDays(7);
             if (!btnIzq.Enabled)
                 btnIzq.Enabled = true;
+        }
+
+        private void cboTerap_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            /* Realizar consulta a base de datos */
         }
     }
 }

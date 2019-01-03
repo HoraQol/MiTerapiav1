@@ -28,9 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVerHorarios));
             this.panelContenido = new System.Windows.Forms.Panel();
+            this.btnDer = new System.Windows.Forms.Button();
+            this.btnIzq = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dtpHasta = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dtpDesde = new System.Windows.Forms.DateTimePicker();
             this.dgvHorario = new System.Windows.Forms.DataGridView();
             this.hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lun = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -45,12 +51,6 @@
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
-            this.dtpDesde = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dtpHasta = new System.Windows.Forms.DateTimePicker();
-            this.btnIzq = new System.Windows.Forms.Button();
-            this.btnDer = new System.Windows.Forms.Button();
             this.panelContenido.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHorario)).BeginInit();
             this.gbxFiltro.SuspendLayout();
@@ -76,18 +76,93 @@
             this.panelContenido.Size = new System.Drawing.Size(600, 570);
             this.panelContenido.TabIndex = 3;
             // 
+            // btnDer
+            // 
+            this.btnDer.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnDer.FlatAppearance.BorderSize = 0;
+            this.btnDer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDer.ForeColor = System.Drawing.Color.White;
+            this.btnDer.Location = new System.Drawing.Point(440, 112);
+            this.btnDer.Name = "btnDer";
+            this.btnDer.Size = new System.Drawing.Size(25, 25);
+            this.btnDer.TabIndex = 16;
+            this.btnDer.Text = ">";
+            this.btnDer.UseVisualStyleBackColor = false;
+            this.btnDer.Click += new System.EventHandler(this.btnDer_Click);
+            // 
+            // btnIzq
+            // 
+            this.btnIzq.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnIzq.Enabled = false;
+            this.btnIzq.FlatAppearance.BorderSize = 0;
+            this.btnIzq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIzq.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIzq.ForeColor = System.Drawing.Color.White;
+            this.btnIzq.Location = new System.Drawing.Point(405, 112);
+            this.btnIzq.Name = "btnIzq";
+            this.btnIzq.Size = new System.Drawing.Size(25, 25);
+            this.btnIzq.TabIndex = 15;
+            this.btnIzq.Text = "<";
+            this.btnIzq.UseVisualStyleBackColor = false;
+            this.btnIzq.Click += new System.EventHandler(this.btnIzq_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(243, 118);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(21, 13);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "al:";
+            // 
+            // dtpHasta
+            // 
+            this.dtpHasta.CalendarTitleForeColor = System.Drawing.Color.AntiqueWhite;
+            this.dtpHasta.Enabled = false;
+            this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpHasta.Location = new System.Drawing.Point(265, 115);
+            this.dtpHasta.MinDate = new System.DateTime(2019, 1, 1, 0, 0, 0, 0);
+            this.dtpHasta.Name = "dtpHasta";
+            this.dtpHasta.Size = new System.Drawing.Size(125, 20);
+            this.dtpHasta.TabIndex = 13;
+            this.dtpHasta.Value = new System.DateTime(2019, 1, 12, 23, 59, 0, 0);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(25, 118);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(87, 13);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Semana del:";
+            // 
+            // dtpDesde
+            // 
+            this.dtpDesde.CalendarTitleForeColor = System.Drawing.Color.AntiqueWhite;
+            this.dtpDesde.Enabled = false;
+            this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDesde.Location = new System.Drawing.Point(115, 115);
+            this.dtpDesde.MinDate = new System.DateTime(2019, 1, 1, 0, 0, 0, 0);
+            this.dtpDesde.Name = "dtpDesde";
+            this.dtpDesde.Size = new System.Drawing.Size(125, 20);
+            this.dtpDesde.TabIndex = 11;
+            this.dtpDesde.Value = new System.DateTime(2019, 1, 7, 0, 0, 0, 0);
+            // 
             // dgvHorario
             // 
             this.dgvHorario.AllowUserToAddRows = false;
             this.dgvHorario.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHorario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHorario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvHorario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHorario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.hora,
@@ -185,6 +260,7 @@
             this.cboTerap.Name = "cboTerap";
             this.cboTerap.Size = new System.Drawing.Size(425, 21);
             this.cboTerap.TabIndex = 1;
+            this.cboTerap.SelectedIndexChanged += new System.EventHandler(this.cboTerap_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -230,81 +306,6 @@
             this.btnCerrar.TabIndex = 3;
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
-            // dtpDesde
-            // 
-            this.dtpDesde.CalendarTitleForeColor = System.Drawing.Color.AntiqueWhite;
-            this.dtpDesde.Enabled = false;
-            this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDesde.Location = new System.Drawing.Point(115, 115);
-            this.dtpDesde.MinDate = new System.DateTime(2019, 1, 1, 0, 0, 0, 0);
-            this.dtpDesde.Name = "dtpDesde";
-            this.dtpDesde.Size = new System.Drawing.Size(125, 20);
-            this.dtpDesde.TabIndex = 11;
-            this.dtpDesde.Value = new System.DateTime(2019, 1, 7, 0, 0, 0, 0);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(25, 118);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 13);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Semana del:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(243, 118);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(21, 13);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "al:";
-            // 
-            // dtpHasta
-            // 
-            this.dtpHasta.CalendarTitleForeColor = System.Drawing.Color.AntiqueWhite;
-            this.dtpHasta.Enabled = false;
-            this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpHasta.Location = new System.Drawing.Point(265, 115);
-            this.dtpHasta.MinDate = new System.DateTime(2019, 1, 1, 0, 0, 0, 0);
-            this.dtpHasta.Name = "dtpHasta";
-            this.dtpHasta.Size = new System.Drawing.Size(125, 20);
-            this.dtpHasta.TabIndex = 13;
-            this.dtpHasta.Value = new System.DateTime(2019, 1, 12, 23, 59, 0, 0);
-            // 
-            // btnIzq
-            // 
-            this.btnIzq.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnIzq.Enabled = false;
-            this.btnIzq.FlatAppearance.BorderSize = 0;
-            this.btnIzq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIzq.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIzq.ForeColor = System.Drawing.Color.White;
-            this.btnIzq.Location = new System.Drawing.Point(405, 112);
-            this.btnIzq.Name = "btnIzq";
-            this.btnIzq.Size = new System.Drawing.Size(25, 25);
-            this.btnIzq.TabIndex = 15;
-            this.btnIzq.Text = "<";
-            this.btnIzq.UseVisualStyleBackColor = false;
-            this.btnIzq.Click += new System.EventHandler(this.btnIzq_Click);
-            // 
-            // btnDer
-            // 
-            this.btnDer.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnDer.FlatAppearance.BorderSize = 0;
-            this.btnDer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDer.ForeColor = System.Drawing.Color.White;
-            this.btnDer.Location = new System.Drawing.Point(440, 112);
-            this.btnDer.Name = "btnDer";
-            this.btnDer.Size = new System.Drawing.Size(25, 25);
-            this.btnDer.TabIndex = 16;
-            this.btnDer.Text = ">";
-            this.btnDer.UseVisualStyleBackColor = false;
-            this.btnDer.Click += new System.EventHandler(this.btnDer_Click);
             // 
             // frmVerHorarios
             // 

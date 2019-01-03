@@ -104,7 +104,7 @@
             this.panelContenido.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenido.Location = new System.Drawing.Point(0, 30);
             this.panelContenido.Name = "panelContenido";
-            this.panelContenido.Size = new System.Drawing.Size(600, 320);
+            this.panelContenido.Size = new System.Drawing.Size(600, 295);
             this.panelContenido.TabIndex = 2;
             // 
             // btnCancelar
@@ -114,7 +114,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(305, 275);
+            this.btnCancelar.Location = new System.Drawing.Point(305, 250);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 25);
             this.btnCancelar.TabIndex = 9;
@@ -129,7 +129,7 @@
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrar.ForeColor = System.Drawing.Color.White;
-            this.btnRegistrar.Location = new System.Drawing.Point(195, 275);
+            this.btnRegistrar.Location = new System.Drawing.Point(195, 250);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(100, 25);
             this.btnRegistrar.TabIndex = 8;
@@ -146,7 +146,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(25, 170);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(550, 90);
+            this.groupBox1.Size = new System.Drawing.Size(550, 65);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Categorización";
@@ -160,16 +160,16 @@
             "Niño",
             "Adolescente",
             "Adulto"});
-            this.cboCateg.Location = new System.Drawing.Point(165, 55);
+            this.cboCateg.Location = new System.Drawing.Point(395, 25);
             this.cboCateg.Name = "cboCateg";
-            this.cboCateg.Size = new System.Drawing.Size(360, 21);
+            this.cboCateg.Size = new System.Drawing.Size(130, 21);
             this.cboCateg.TabIndex = 12;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(25, 55);
+            this.label8.Location = new System.Drawing.Point(270, 28);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(123, 13);
             this.label8.TabIndex = 11;
@@ -188,9 +188,10 @@
             // dtpFechNac
             // 
             this.dtpFechNac.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechNac.Location = new System.Drawing.Point(165, 25);
+            this.dtpFechNac.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechNac.Location = new System.Drawing.Point(160, 25);
             this.dtpFechNac.Name = "dtpFechNac";
-            this.dtpFechNac.Size = new System.Drawing.Size(360, 21);
+            this.dtpFechNac.Size = new System.Drawing.Size(100, 21);
             this.dtpFechNac.TabIndex = 9;
             // 
             // gbxBasico
@@ -331,7 +332,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 350);
+            this.ClientSize = new System.Drawing.Size(600, 325);
             this.Controls.Add(this.panelContenido);
             this.Controls.Add(this.panelTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

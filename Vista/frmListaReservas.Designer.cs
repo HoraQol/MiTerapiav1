@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListaReservas));
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.dgvReservas = new System.Windows.Forms.DataGridView();
+            this.colCli = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colVer = new System.Windows.Forms.DataGridViewButtonColumn();
             this.gbxFiltro = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtpHasta = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dtpDesde = new System.Windows.Forms.DateTimePicker();
+            this.txtCli = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
-            this.colCli = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colVer = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panelContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReservas)).BeginInit();
             this.gbxFiltro.SuspendLayout();
@@ -67,82 +67,106 @@
             // 
             this.dgvReservas.AllowUserToAddRows = false;
             this.dgvReservas.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvReservas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvReservas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvReservas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvReservas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colCli,
             this.colFecha,
             this.colVer});
-            this.dgvReservas.Location = new System.Drawing.Point(30, 146);
+            this.dgvReservas.Location = new System.Drawing.Point(30, 126);
             this.dgvReservas.Name = "dgvReservas";
             this.dgvReservas.ReadOnly = true;
             this.dgvReservas.RowHeadersVisible = false;
-            this.dgvReservas.Size = new System.Drawing.Size(940, 357);
+            this.dgvReservas.Size = new System.Drawing.Size(940, 377);
             this.dgvReservas.TabIndex = 1;
+            // 
+            // colCli
+            // 
+            this.colCli.HeaderText = "Cliente";
+            this.colCli.Name = "colCli";
+            this.colCli.ReadOnly = true;
+            this.colCli.Width = 450;
+            // 
+            // colFecha
+            // 
+            this.colFecha.HeaderText = "Fecha de sesión más próxima";
+            this.colFecha.Name = "colFecha";
+            this.colFecha.ReadOnly = true;
+            this.colFecha.Width = 350;
+            // 
+            // colVer
+            // 
+            this.colVer.HeaderText = "Detalle";
+            this.colVer.Name = "colVer";
+            this.colVer.ReadOnly = true;
+            this.colVer.Width = 137;
             // 
             // gbxFiltro
             // 
-            this.gbxFiltro.Controls.Add(this.dateTimePicker2);
+            this.gbxFiltro.Controls.Add(this.dtpHasta);
             this.gbxFiltro.Controls.Add(this.label4);
-            this.gbxFiltro.Controls.Add(this.dateTimePicker1);
-            this.gbxFiltro.Controls.Add(this.textBox1);
+            this.gbxFiltro.Controls.Add(this.dtpDesde);
+            this.gbxFiltro.Controls.Add(this.txtCli);
             this.gbxFiltro.Controls.Add(this.label3);
             this.gbxFiltro.Controls.Add(this.label2);
             this.gbxFiltro.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbxFiltro.Location = new System.Drawing.Point(30, 30);
             this.gbxFiltro.Name = "gbxFiltro";
-            this.gbxFiltro.Size = new System.Drawing.Size(940, 100);
+            this.gbxFiltro.Size = new System.Drawing.Size(940, 70);
             this.gbxFiltro.TabIndex = 0;
             this.gbxFiltro.TabStop = false;
             this.gbxFiltro.Text = "Opciones de filtrado";
             // 
-            // dateTimePicker2
+            // dtpHasta
             // 
-            this.dateTimePicker2.CalendarFont = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Location = new System.Drawing.Point(540, 55);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(380, 21);
-            this.dateTimePicker2.TabIndex = 5;
+            this.dtpHasta.CalendarFont = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpHasta.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpHasta.Location = new System.Drawing.Point(810, 25);
+            this.dtpHasta.Name = "dtpHasta";
+            this.dtpHasta.Size = new System.Drawing.Size(100, 21);
+            this.dtpHasta.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(520, 58);
+            this.label4.Location = new System.Drawing.Point(785, 28);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(12, 13);
             this.label4.TabIndex = 4;
             this.label4.Text = "-";
             // 
-            // dateTimePicker1
+            // dtpDesde
             // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(130, 55);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(380, 21);
-            this.dateTimePicker1.TabIndex = 3;
+            this.dtpDesde.CalendarFont = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDesde.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDesde.Location = new System.Drawing.Point(675, 25);
+            this.dtpDesde.Name = "dtpDesde";
+            this.dtpDesde.Size = new System.Drawing.Size(100, 21);
+            this.dtpDesde.TabIndex = 3;
+            this.dtpDesde.ValueChanged += new System.EventHandler(this.dtpDesde_ValueChanged);
             // 
-            // textBox1
+            // txtCli
             // 
-            this.textBox1.Location = new System.Drawing.Point(79, 25);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(840, 21);
-            this.textBox1.TabIndex = 2;
+            this.txtCli.Location = new System.Drawing.Point(79, 25);
+            this.txtCli.Name = "txtCli";
+            this.txtCli.Size = new System.Drawing.Size(450, 21);
+            this.txtCli.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(20, 58);
+            this.label3.Location = new System.Drawing.Point(560, 28);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 13);
             this.label3.TabIndex = 1;
@@ -192,27 +216,6 @@
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // colCli
-            // 
-            this.colCli.HeaderText = "Cliente";
-            this.colCli.Name = "colCli";
-            this.colCli.ReadOnly = true;
-            this.colCli.Width = 450;
-            // 
-            // colFecha
-            // 
-            this.colFecha.HeaderText = "Fecha de sesión más próxima";
-            this.colFecha.Name = "colFecha";
-            this.colFecha.ReadOnly = true;
-            this.colFecha.Width = 350;
-            // 
-            // colVer
-            // 
-            this.colVer.HeaderText = "Detalle";
-            this.colVer.Name = "colVer";
-            this.colVer.ReadOnly = true;
-            this.colVer.Width = 137;
-            // 
             // frmListaReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -244,10 +247,10 @@
         private System.Windows.Forms.GroupBox gbxFiltro;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtpHasta;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DateTimePicker dtpDesde;
+        private System.Windows.Forms.TextBox txtCli;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCli;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFecha;
         private System.Windows.Forms.DataGridViewButtonColumn colVer;

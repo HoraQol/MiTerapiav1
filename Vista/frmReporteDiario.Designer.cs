@@ -43,6 +43,10 @@
             this.btnExportar = new System.Windows.Forms.Button();
             this.lblIndic = new System.Windows.Forms.Label();
             this.dgvPagos = new System.Windows.Forms.DataGridView();
+            this.colCli = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMonto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbxFiltro = new System.Windows.Forms.GroupBox();
             this.chkTransf = new System.Windows.Forms.CheckBox();
             this.chkTarj = new System.Windows.Forms.CheckBox();
@@ -52,10 +56,7 @@
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
-            this.colCli = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMonto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label8 = new System.Windows.Forms.Label();
             this.panelContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPagos)).BeginInit();
             this.gbxFiltro.SuspendLayout();
@@ -225,8 +226,37 @@
             this.dgvPagos.Size = new System.Drawing.Size(950, 300);
             this.dgvPagos.TabIndex = 1;
             // 
+            // colCli
+            // 
+            this.colCli.HeaderText = "Cliente";
+            this.colCli.Name = "colCli";
+            this.colCli.ReadOnly = true;
+            this.colCli.Width = 360;
+            // 
+            // colMonto
+            // 
+            this.colMonto.HeaderText = "Monto pagado (S/.)";
+            this.colMonto.Name = "colMonto";
+            this.colMonto.ReadOnly = true;
+            this.colMonto.Width = 165;
+            // 
+            // colTipo
+            // 
+            this.colTipo.HeaderText = "Tipo de operación";
+            this.colTipo.Name = "colTipo";
+            this.colTipo.ReadOnly = true;
+            this.colTipo.Width = 150;
+            // 
+            // colDoc
+            // 
+            this.colDoc.HeaderText = "Nro. de documento";
+            this.colDoc.Name = "colDoc";
+            this.colDoc.ReadOnly = true;
+            this.colDoc.Width = 272;
+            // 
             // gbxFiltro
             // 
+            this.gbxFiltro.Controls.Add(this.label8);
             this.gbxFiltro.Controls.Add(this.chkTransf);
             this.gbxFiltro.Controls.Add(this.chkTarj);
             this.gbxFiltro.Controls.Add(this.chkEfect);
@@ -244,11 +274,11 @@
             // 
             this.chkTransf.AutoSize = true;
             this.chkTransf.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkTransf.Location = new System.Drawing.Point(765, 27);
+            this.chkTransf.Location = new System.Drawing.Point(685, 27);
             this.chkTransf.Name = "chkTransf";
-            this.chkTransf.Size = new System.Drawing.Size(156, 17);
+            this.chkTransf.Size = new System.Drawing.Size(243, 17);
             this.chkTransf.TabIndex = 4;
-            this.chkTransf.Text = "Transferencia bancaria";
+            this.chkTransf.Text = "Pago mediante transferencia bancaria";
             this.chkTransf.UseVisualStyleBackColor = true;
             this.chkTransf.CheckedChanged += new System.EventHandler(this.chkTransf_CheckedChanged);
             // 
@@ -256,7 +286,7 @@
             // 
             this.chkTarj.AutoSize = true;
             this.chkTarj.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkTarj.Location = new System.Drawing.Point(640, 27);
+            this.chkTarj.Location = new System.Drawing.Point(550, 27);
             this.chkTarj.Name = "chkTarj";
             this.chkTarj.Size = new System.Drawing.Size(120, 17);
             this.chkTarj.TabIndex = 3;
@@ -268,11 +298,11 @@
             // 
             this.chkEfect.AutoSize = true;
             this.chkEfect.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkEfect.Location = new System.Drawing.Point(560, 27);
+            this.chkEfect.Location = new System.Drawing.Point(410, 27);
             this.chkEfect.Name = "chkEfect";
-            this.chkEfect.Size = new System.Drawing.Size(71, 17);
+            this.chkEfect.Size = new System.Drawing.Size(121, 17);
             this.chkEfect.TabIndex = 2;
-            this.chkEfect.Text = "Efectivo";
+            this.chkEfect.Text = "Pago en efectivo";
             this.chkEfect.UseVisualStyleBackColor = true;
             this.chkEfect.CheckedChanged += new System.EventHandler(this.chkEfect_CheckedChanged);
             // 
@@ -282,16 +312,17 @@
             this.label2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(25, 28);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 13);
+            this.label2.Size = new System.Drawing.Size(109, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Fecha:";
+            this.label2.Text = "Fecha de reporte:";
             // 
             // dtpFecha
             // 
             this.dtpFecha.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFecha.Location = new System.Drawing.Point(80, 25);
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha.Location = new System.Drawing.Point(140, 25);
             this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(450, 21);
+            this.dtpFecha.Size = new System.Drawing.Size(150, 21);
             this.dtpFecha.TabIndex = 0;
             this.dtpFecha.ValueChanged += new System.EventHandler(this.dtpFecha_ValueChanged);
             // 
@@ -329,33 +360,15 @@
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // colCli
+            // label8
             // 
-            this.colCli.HeaderText = "Cliente";
-            this.colCli.Name = "colCli";
-            this.colCli.ReadOnly = true;
-            this.colCli.Width = 360;
-            // 
-            // colMonto
-            // 
-            this.colMonto.HeaderText = "Monto pagado (S/.)";
-            this.colMonto.Name = "colMonto";
-            this.colMonto.ReadOnly = true;
-            this.colMonto.Width = 165;
-            // 
-            // colTipo
-            // 
-            this.colTipo.HeaderText = "Tipo de operación";
-            this.colTipo.Name = "colTipo";
-            this.colTipo.ReadOnly = true;
-            this.colTipo.Width = 150;
-            // 
-            // colDoc
-            // 
-            this.colDoc.HeaderText = "Nro. de documento";
-            this.colDoc.Name = "colDoc";
-            this.colDoc.ReadOnly = true;
-            this.colDoc.Width = 272;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(315, 28);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(86, 13);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Tipo de pago:";
             // 
             // frmReporteDiario
             // 
@@ -407,5 +420,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colMonto;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDoc;
+        private System.Windows.Forms.Label label8;
     }
 }

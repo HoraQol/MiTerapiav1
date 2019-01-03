@@ -137,20 +137,22 @@ namespace Vista
 
         private void dgvSesiones_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            int pagar = 0;
-            if (dgvSesiones.Rows.Count > 0)
+            if (e.ColumnIndex == 2)
             {
-                foreach (DataGridViewRow row in dgvSesiones.Rows)
+                int conta = 0, i = 0;
+                var senderGrid = (DataGridView)sender;
+                foreach (DataGridViewRow row in senderGrid.Rows)
                 {
-                    DataGridViewCheckBoxCell cell = (DataGridViewCheckBoxCell)row.Cells[2];
-                    Boolean str = Boolean.Parse(cell.FormattedValue.ToString());
-                    if (!str)
-                        pagar++;
+                    //DataGridViewCheckBoxCell cel = (row.Cells[2] as DataGridViewCheckBoxCell);
+                    if (Convert.ToBoolean(row.Cells[2].Value))
+                        conta++;
+                    if (!(Convert.ToBoolean(row.Cells[2].Value)) && (e.RowIndex == i))
+                        conta++;
+                    i++;
                 }
+                txtNumSesiones.Text = conta.ToString();
+                txtTotal.Text = (conta * 45.00).ToString("n2");
             }
-
-            txtNumSesiones.Text = pagar.ToString();
-            txtTotal.Text = (pagar * 45).ToString() + ".00";
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -168,6 +170,26 @@ namespace Vista
             frm.ShowDialog();
             if (frm.getEstado() == 1)
                 Dispose();
+        }
+
+        private void btnCalcular_Click(object sender, EventArgs e)
+        {
+            int conta = 0, i = 0;
+            foreach (DataGridViewRow row in dgvSesiones.Rows)
+            {
+                if (Convert.ToBoolean(row.Cells[2].Value))
+                conta++;
+                i++;
+            }
+            txtNumSesiones.Text = conta.ToString();
+            txtTotal.Text = (conta * 45.00).ToString("n2");
+            btnRegistrar.Enabled = true;
+        }
+
+        private void dgvSesiones_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 2)
+                btnRegistrar.Enabled = false;
         }
     }
 }

@@ -17,6 +17,7 @@ namespace Vista
         {
             this.StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
+            lblNombre.Text = "[nombreUsuario]";
         }
 
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]

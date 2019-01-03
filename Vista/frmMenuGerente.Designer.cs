@@ -35,7 +35,7 @@
             this.btnCrearReserva = new System.Windows.Forms.Button();
             this.btnListaReservas = new System.Windows.Forms.Button();
             this.pbxLogo = new System.Windows.Forms.PictureBox();
-            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblWlc = new System.Windows.Forms.Label();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.btnReporte = new System.Windows.Forms.Button();
             this.btnReserva = new System.Windows.Forms.Button();
@@ -46,6 +46,7 @@
             this.btnMaximizar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
+            this.lblNombre = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).BeginInit();
             this.panelTitulo.SuspendLayout();
@@ -58,12 +59,13 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panelMenu.Controls.Add(this.lblNombre);
             this.panelMenu.Controls.Add(this.btnReporteMensual);
             this.panelMenu.Controls.Add(this.btnReporteDiario);
             this.panelMenu.Controls.Add(this.btnCrearReserva);
             this.panelMenu.Controls.Add(this.btnListaReservas);
             this.panelMenu.Controls.Add(this.pbxLogo);
-            this.panelMenu.Controls.Add(this.lblNombre);
+            this.panelMenu.Controls.Add(this.lblWlc);
             this.panelMenu.Controls.Add(this.btnCerrarSesion);
             this.panelMenu.Controls.Add(this.btnReporte);
             this.panelMenu.Controls.Add(this.btnReserva);
@@ -151,16 +153,16 @@
             this.pbxLogo.TabIndex = 4;
             this.pbxLogo.TabStop = false;
             // 
-            // lblNombre
+            // lblWlc
             // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.ForeColor = System.Drawing.Color.White;
-            this.lblNombre.Location = new System.Drawing.Point(10, 90);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(47, 13);
-            this.lblNombre.TabIndex = 3;
-            this.lblNombre.Text = "label1";
+            this.lblWlc.AutoSize = true;
+            this.lblWlc.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWlc.ForeColor = System.Drawing.Color.White;
+            this.lblWlc.Location = new System.Drawing.Point(10, 85);
+            this.lblWlc.Name = "lblWlc";
+            this.lblWlc.Size = new System.Drawing.Size(87, 13);
+            this.lblWlc.TabIndex = 3;
+            this.lblWlc.Text = "Bienvenido(a)";
             // 
             // btnCerrarSesion
             // 
@@ -295,6 +297,17 @@
             this.panelContenedor.Size = new System.Drawing.Size(1000, 570);
             this.panelContenedor.TabIndex = 2;
             // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.ForeColor = System.Drawing.Color.White;
+            this.lblNombre.Location = new System.Drawing.Point(10, 100);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(47, 13);
+            this.lblNombre.TabIndex = 9;
+            this.lblNombre.Text = "label1";
+            // 
             // frmMenuGerente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -332,11 +345,12 @@
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button btnCerrarSesion;
         private System.Windows.Forms.Button btnReporte;
-        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Label lblWlc;
         private System.Windows.Forms.PictureBox pbxLogo;
         private System.Windows.Forms.Button btnCrearReserva;
         private System.Windows.Forms.Button btnListaReservas;
         private System.Windows.Forms.Button btnReporteMensual;
         private System.Windows.Forms.Button btnReporteDiario;
+        private System.Windows.Forms.Label lblNombre;
     }
 }

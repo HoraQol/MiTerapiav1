@@ -116,7 +116,17 @@ namespace Vista
                 MSExcel.Application hoja = new MSExcel.Application();
                 MSExcel.Workbook wb = hoja.Workbooks.Add(MSExcel.XlWBATemplate.xlWBATWorksheet);
                 MSExcel.Worksheet ws = wb.ActiveSheet;
-                ws.Cells[1, 1] = "Data";
+                ws.Cells[1, 1] = "Filtros";
+                ws.Cells[2, 1] = "Día:";
+                ws.Cells[2, 2] = dtpFecha.Value.ToString("dd/MM/yyyy");
+                ws.get_Range("A4", "D4").Font.Bold = true;
+                ws.get_Range("A4", "D4").VerticalAlignment = MSExcel.XlVAlign.xlVAlignCenter;
+                ws.get_Range("A4", "D4").Cells.Borders.LineStyle = MSExcel.XlLineStyle.xlContinuous;
+                ws.Columns[1].ColumnWidth = 45;
+                ws.Cells[4, 1] = "Cliente";
+                ws.Cells[4, 2] = "Monto pagado (S/.)";
+                ws.Cells[4, 3] = "Tipo de operación";
+                ws.Cells[4, 4] = "Nro. documento";
                 wb.SaveAs(fbd.SelectedPath.ToString() +
                     "\\ReporteDiario" + dtpFecha.Value.ToString("yyyyMMdd") + ".xlsx");
             }

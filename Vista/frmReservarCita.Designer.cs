@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReservarCita));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
-            this.panelContenedor = new System.Windows.Forms.Panel();
+            this.btnCalc = new System.Windows.Forms.Panel();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.gbxPago = new System.Windows.Forms.GroupBox();
@@ -51,6 +51,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.gbxSesiones = new System.Windows.Forms.GroupBox();
             this.dgvSesiones = new System.Windows.Forms.DataGridView();
+            this.colHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTerap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPagar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btnEliminarHorarios = new System.Windows.Forms.Button();
             this.btnHorarios = new System.Windows.Forms.Button();
             this.gbxCliente = new System.Windows.Forms.GroupBox();
@@ -63,12 +66,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtDNI = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.colHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTerap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPagar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.btnCalcular = new System.Windows.Forms.Button();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
-            this.panelContenedor.SuspendLayout();
+            this.btnCalc.SuspendLayout();
             this.gbxPago.SuspendLayout();
             this.gbxSesiones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSesiones)).BeginInit();
@@ -109,19 +110,19 @@
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // panelContenedor
+            // btnCalc
             // 
-            this.panelContenedor.BackColor = System.Drawing.Color.White;
-            this.panelContenedor.Controls.Add(this.btnCancelar);
-            this.panelContenedor.Controls.Add(this.btnRegistrar);
-            this.panelContenedor.Controls.Add(this.gbxPago);
-            this.panelContenedor.Controls.Add(this.gbxSesiones);
-            this.panelContenedor.Controls.Add(this.gbxCliente);
-            this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContenedor.Location = new System.Drawing.Point(0, 30);
-            this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(1000, 540);
-            this.panelContenedor.TabIndex = 1;
+            this.btnCalc.BackColor = System.Drawing.Color.White;
+            this.btnCalc.Controls.Add(this.btnCancelar);
+            this.btnCalc.Controls.Add(this.btnRegistrar);
+            this.btnCalc.Controls.Add(this.gbxPago);
+            this.btnCalc.Controls.Add(this.gbxSesiones);
+            this.btnCalc.Controls.Add(this.gbxCliente);
+            this.btnCalc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCalc.Location = new System.Drawing.Point(0, 30);
+            this.btnCalc.Name = "btnCalc";
+            this.btnCalc.Size = new System.Drawing.Size(1000, 540);
+            this.btnCalc.TabIndex = 1;
             // 
             // btnCancelar
             // 
@@ -141,6 +142,7 @@
             // btnRegistrar
             // 
             this.btnRegistrar.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnRegistrar.Enabled = false;
             this.btnRegistrar.FlatAppearance.BorderSize = 0;
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -155,6 +157,7 @@
             // 
             // gbxPago
             // 
+            this.gbxPago.Controls.Add(this.btnCalcular);
             this.gbxPago.Controls.Add(this.txtNumDoc);
             this.gbxPago.Controls.Add(this.label10);
             this.gbxPago.Controls.Add(this.chkPagador);
@@ -238,7 +241,7 @@
             "Efectivo",
             "Transferencia bancaria",
             "Pago con tarjeta"});
-            this.cboTipo.Location = new System.Drawing.Point(605, 20);
+            this.cboTipo.Location = new System.Drawing.Point(615, 20);
             this.cboTipo.Name = "cboTipo";
             this.cboTipo.Size = new System.Drawing.Size(180, 21);
             this.cboTipo.TabIndex = 8;
@@ -248,7 +251,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(505, 23);
+            this.label6.Location = new System.Drawing.Point(515, 23);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(98, 13);
             this.label6.TabIndex = 7;
@@ -258,7 +261,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(370, 23);
+            this.label8.Location = new System.Drawing.Point(345, 23);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(27, 13);
             this.label8.TabIndex = 6;
@@ -268,7 +271,7 @@
             // 
             this.txtTotal.Enabled = false;
             this.txtTotal.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(400, 20);
+            this.txtTotal.Location = new System.Drawing.Point(375, 20);
             this.txtTotal.MaxLength = 2;
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(80, 21);
@@ -279,7 +282,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(265, 23);
+            this.label5.Location = new System.Drawing.Point(245, 23);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(102, 13);
             this.label5.TabIndex = 4;
@@ -289,7 +292,7 @@
             // 
             this.txtNumSesiones.Enabled = false;
             this.txtNumSesiones.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumSesiones.Location = new System.Drawing.Point(215, 20);
+            this.txtNumSesiones.Location = new System.Drawing.Point(210, 20);
             this.txtNumSesiones.MaxLength = 2;
             this.txtNumSesiones.Name = "txtNumSesiones";
             this.txtNumSesiones.Size = new System.Drawing.Size(25, 21);
@@ -324,14 +327,14 @@
             // 
             this.dgvSesiones.AllowUserToAddRows = false;
             this.dgvSesiones.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSesiones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSesiones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSesiones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSesiones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colHora,
@@ -343,7 +346,27 @@
             this.dgvSesiones.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvSesiones.Size = new System.Drawing.Size(900, 160);
             this.dgvSesiones.TabIndex = 8;
-            this.dgvSesiones.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSesiones_CellValueChanged);
+            this.dgvSesiones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSesiones_CellContentClick);
+            // 
+            // colHora
+            // 
+            this.colHora.HeaderText = "Hora de la sesión";
+            this.colHora.Name = "colHora";
+            this.colHora.Width = 350;
+            // 
+            // colTerap
+            // 
+            this.colTerap.HeaderText = "Terapeuta encargado(a)";
+            this.colTerap.Name = "colTerap";
+            this.colTerap.Width = 460;
+            // 
+            // colPagar
+            // 
+            this.colPagar.HeaderText = "¿Pagar?";
+            this.colPagar.Name = "colPagar";
+            this.colPagar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colPagar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colPagar.Width = 87;
             // 
             // btnEliminarHorarios
             // 
@@ -497,32 +520,27 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Doc. de Identidad:";
             // 
-            // colHora
+            // btnCalcular
             // 
-            this.colHora.HeaderText = "Hora de la sesión";
-            this.colHora.Name = "colHora";
-            this.colHora.Width = 350;
-            // 
-            // colTerap
-            // 
-            this.colTerap.HeaderText = "Terapeuta encargado(a)";
-            this.colTerap.Name = "colTerap";
-            this.colTerap.Width = 460;
-            // 
-            // colPagar
-            // 
-            this.colPagar.HeaderText = "¿Pagar?";
-            this.colPagar.Name = "colPagar";
-            this.colPagar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colPagar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colPagar.Width = 87;
+            this.btnCalcular.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnCalcular.FlatAppearance.BorderSize = 0;
+            this.btnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCalcular.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalcular.ForeColor = System.Drawing.Color.White;
+            this.btnCalcular.Location = new System.Drawing.Point(465, 20);
+            this.btnCalcular.Name = "btnCalcular";
+            this.btnCalcular.Size = new System.Drawing.Size(45, 20);
+            this.btnCalcular.TabIndex = 14;
+            this.btnCalcular.Text = "Calc.";
+            this.btnCalcular.UseVisualStyleBackColor = false;
+            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
             // 
             // frmReservarCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 570);
-            this.Controls.Add(this.panelContenedor);
+            this.Controls.Add(this.btnCalc);
             this.Controls.Add(this.panelTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmReservarCita";
@@ -530,7 +548,7 @@
             this.panelTitulo.ResumeLayout(false);
             this.panelTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
-            this.panelContenedor.ResumeLayout(false);
+            this.btnCalc.ResumeLayout(false);
             this.gbxPago.ResumeLayout(false);
             this.gbxPago.PerformLayout();
             this.gbxSesiones.ResumeLayout(false);
@@ -546,7 +564,7 @@
         private System.Windows.Forms.Panel panelTitulo;
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panelContenedor;
+        private System.Windows.Forms.Panel btnCalc;
         private System.Windows.Forms.GroupBox gbxCliente;
         private System.Windows.Forms.TextBox txtDNI;
         private System.Windows.Forms.Label label2;
@@ -579,5 +597,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colHora;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTerap;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colPagar;
+        private System.Windows.Forms.Button btnCalcular;
     }
 }
