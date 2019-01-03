@@ -85,7 +85,7 @@ namespace Vista
                 else
                 {
                     CustomMessageBox frm = new CustomMessageBox("El cliente ha sido registrado " +
-                        "correctamente.", "Mensaje de confirmación", 1);
+                        "correctamente.", "Registro correcto", 1);
                     frm.ShowDialog();
                 }
                 this.Dispose();

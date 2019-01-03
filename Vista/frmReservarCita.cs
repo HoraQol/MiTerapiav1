@@ -93,8 +93,6 @@ namespace Vista
                 CustomMessageBox frm = new CustomMessageBox("No puede eliminar una sesión de una lista vacía.",
                     "Error en la transacción", 1);
                 frm.ShowDialog();
-                //MessageBox.Show("No puede eliminar una sesión de una lista vacía",
-                //    "Error en la transacción");
             }
         }
 
@@ -153,6 +151,23 @@ namespace Vista
 
             txtNumSesiones.Text = pagar.ToString();
             txtTotal.Text = (pagar * 45).ToString() + ".00";
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            CustomMessageBox frm = new CustomMessageBox("El registro se realizó satisfactoriamente.",
+                    "Registro correcto", 1);
+            frm.ShowDialog();
+            Dispose();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            CustomMessageBox frm = new CustomMessageBox("¿Está seguro de cancelar este registro?",
+                    "Mensaje de confirmación", 1);
+            frm.ShowDialog();
+            if (frm.getEstado() == 1)
+                Dispose();
         }
     }
 }

@@ -29,10 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReservarCita));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnRegistrar = new System.Windows.Forms.Button();
             this.gbxPago = new System.Windows.Forms.GroupBox();
             this.txtNumDoc = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -48,9 +51,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.gbxSesiones = new System.Windows.Forms.GroupBox();
             this.dgvSesiones = new System.Windows.Forms.DataGridView();
-            this.colHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTerap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPagar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btnEliminarHorarios = new System.Windows.Forms.Button();
             this.btnHorarios = new System.Windows.Forms.Button();
             this.gbxCliente = new System.Windows.Forms.GroupBox();
@@ -63,6 +63,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtDNI = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.colHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTerap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPagar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.panelContenedor.SuspendLayout();
@@ -109,6 +112,8 @@
             // panelContenedor
             // 
             this.panelContenedor.BackColor = System.Drawing.Color.White;
+            this.panelContenedor.Controls.Add(this.btnCancelar);
+            this.panelContenedor.Controls.Add(this.btnRegistrar);
             this.panelContenedor.Controls.Add(this.gbxPago);
             this.panelContenedor.Controls.Add(this.gbxSesiones);
             this.panelContenedor.Controls.Add(this.gbxCliente);
@@ -117,6 +122,36 @@
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(1000, 540);
             this.panelContenedor.TabIndex = 1;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(505, 481);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(100, 30);
+            this.btnCancelar.TabIndex = 11;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnRegistrar
+            // 
+            this.btnRegistrar.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnRegistrar.FlatAppearance.BorderSize = 0;
+            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrar.ForeColor = System.Drawing.Color.White;
+            this.btnRegistrar.Location = new System.Drawing.Point(395, 481);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(100, 30);
+            this.btnRegistrar.TabIndex = 10;
+            this.btnRegistrar.Text = "Registrar cita";
+            this.btnRegistrar.UseVisualStyleBackColor = false;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // gbxPago
             // 
@@ -139,7 +174,7 @@
             this.gbxPago.Size = new System.Drawing.Size(940, 90);
             this.gbxPago.TabIndex = 9;
             this.gbxPago.TabStop = false;
-            this.gbxPago.Text = "Datos del pago";
+            this.gbxPago.Text = "Datos del pago inicial";
             // 
             // txtNumDoc
             // 
@@ -167,7 +202,7 @@
             // 
             this.chkPagador.AutoSize = true;
             this.chkPagador.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkPagador.Location = new System.Drawing.Point(799, 24);
+            this.chkPagador.Location = new System.Drawing.Point(804, 24);
             this.chkPagador.Name = "chkPagador";
             this.chkPagador.Size = new System.Drawing.Size(121, 17);
             this.chkPagador.TabIndex = 11;
@@ -203,9 +238,9 @@
             "Efectivo",
             "Transferencia bancaria",
             "Pago con tarjeta"});
-            this.cboTipo.Location = new System.Drawing.Point(580, 20);
+            this.cboTipo.Location = new System.Drawing.Point(605, 20);
             this.cboTipo.Name = "cboTipo";
-            this.cboTipo.Size = new System.Drawing.Size(200, 21);
+            this.cboTipo.Size = new System.Drawing.Size(180, 21);
             this.cboTipo.TabIndex = 8;
             this.cboTipo.TextChanged += new System.EventHandler(this.cboTipo_TextChanged);
             // 
@@ -213,7 +248,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(480, 23);
+            this.label6.Location = new System.Drawing.Point(505, 23);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(98, 13);
             this.label6.TabIndex = 7;
@@ -236,7 +271,7 @@
             this.txtTotal.Location = new System.Drawing.Point(400, 20);
             this.txtTotal.MaxLength = 2;
             this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(60, 21);
+            this.txtTotal.Size = new System.Drawing.Size(80, 21);
             this.txtTotal.TabIndex = 5;
             this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -289,6 +324,14 @@
             // 
             this.dgvSesiones.AllowUserToAddRows = false;
             this.dgvSesiones.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSesiones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvSesiones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSesiones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colHora,
@@ -296,29 +339,11 @@
             this.colPagar});
             this.dgvSesiones.Location = new System.Drawing.Point(23, 34);
             this.dgvSesiones.Name = "dgvSesiones";
+            this.dgvSesiones.RowHeadersVisible = false;
+            this.dgvSesiones.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvSesiones.Size = new System.Drawing.Size(900, 160);
             this.dgvSesiones.TabIndex = 8;
             this.dgvSesiones.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSesiones_CellValueChanged);
-            // 
-            // colHora
-            // 
-            this.colHora.HeaderText = "Hora de la sesión";
-            this.colHora.Name = "colHora";
-            this.colHora.Width = 340;
-            // 
-            // colTerap
-            // 
-            this.colTerap.HeaderText = "Terapeuta encargado(a)";
-            this.colTerap.Name = "colTerap";
-            this.colTerap.Width = 450;
-            // 
-            // colPagar
-            // 
-            this.colPagar.HeaderText = "¿Pagar?";
-            this.colPagar.Name = "colPagar";
-            this.colPagar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colPagar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colPagar.Width = 66;
             // 
             // btnEliminarHorarios
             // 
@@ -472,6 +497,26 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Doc. de Identidad:";
             // 
+            // colHora
+            // 
+            this.colHora.HeaderText = "Hora de la sesión";
+            this.colHora.Name = "colHora";
+            this.colHora.Width = 350;
+            // 
+            // colTerap
+            // 
+            this.colTerap.HeaderText = "Terapeuta encargado(a)";
+            this.colTerap.Name = "colTerap";
+            this.colTerap.Width = 460;
+            // 
+            // colPagar
+            // 
+            this.colPagar.HeaderText = "¿Pagar?";
+            this.colPagar.Name = "colPagar";
+            this.colPagar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colPagar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colPagar.Width = 87;
+            // 
             // frmReservarCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -529,6 +574,8 @@
         private System.Windows.Forms.CheckBox chkPagador;
         private System.Windows.Forms.TextBox txtPagador;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.DataGridViewTextBoxColumn colHora;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTerap;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colPagar;

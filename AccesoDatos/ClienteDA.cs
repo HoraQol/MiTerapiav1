@@ -15,13 +15,7 @@ namespace AccesoDatos
         {
             try
             {
-                MySqlConnectionStringBuilder conn_string = new MySqlConnectionStringBuilder();
-                conn_string.PersistSecurityInfo = true;
-                conn_string.Server = "localhost";
-                conn_string.UserID = "root";
-                conn_string.Password = "root";
-                conn_string.Database = "miterapia";
-                MySqlConnection conn = new MySqlConnection(conn_string.ToString());
+                MySqlConnection conn = new Database().getConection();
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.CommandText = "INSERT INTO miterapia.cliente (nombre, apPat, apMat, " +
@@ -44,13 +38,7 @@ namespace AccesoDatos
             BindingList<Cliente> result = new BindingList<Cliente>();
             try
             {
-                MySqlConnectionStringBuilder conn_string = new MySqlConnectionStringBuilder();
-                conn_string.PersistSecurityInfo = true;
-                conn_string.Server = "localhost";
-                conn_string.UserID = "root";
-                conn_string.Password = "root";
-                conn_string.Database = "miterapia";
-                MySqlConnection conn = new MySqlConnection(conn_string.ToString());
+                MySqlConnection conn = new Database().getConection();
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.CommandText = "SELECT * FROM miterapia.cliente WHERE estado = 1";

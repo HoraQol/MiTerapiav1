@@ -35,6 +35,7 @@
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.lblContenido = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
+            this.btnNo = new System.Windows.Forms.Button();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.panelContenedor.SuspendLayout();
@@ -77,6 +78,7 @@
             // panelContenedor
             // 
             this.panelContenedor.BackColor = System.Drawing.Color.White;
+            this.panelContenedor.Controls.Add(this.btnNo);
             this.panelContenedor.Controls.Add(this.lblContenido);
             this.panelContenedor.Controls.Add(this.btnAceptar);
             this.panelContenedor.Location = new System.Drawing.Point(0, 30);
@@ -109,6 +111,21 @@
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
+            // btnNo
+            // 
+            this.btnNo.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnNo.FlatAppearance.BorderSize = 0;
+            this.btnNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNo.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNo.ForeColor = System.Drawing.Color.White;
+            this.btnNo.Location = new System.Drawing.Point(424, 40);
+            this.btnNo.Name = "btnNo";
+            this.btnNo.Size = new System.Drawing.Size(100, 20);
+            this.btnNo.TabIndex = 9;
+            this.btnNo.Text = "No";
+            this.btnNo.UseVisualStyleBackColor = false;
+            this.btnNo.Click += new System.EventHandler(this.btnNo_Click);
+            // 
             // CustomMessageBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -136,5 +153,6 @@
         private System.Windows.Forms.Panel panelContenedor;
         private System.Windows.Forms.Label lblContenido;
         private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Button btnNo;
     }
 }

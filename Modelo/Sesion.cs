@@ -13,14 +13,16 @@ namespace Modelo
         int idTerap;
         DateTime horaInicio;
         int estado;
+        int idPago;
 
-        public Sesion(int id, int idCita, int idTerap, DateTime horaInicio, int estado)
+        public Sesion(int id, int idCita, int idTerap, DateTime horaInicio, int estado, int idPago)
         {
             this.id = id;
             this.idCita = idCita;
             this.idTerap = idTerap;
             this.horaInicio = horaInicio;
             this.estado = estado;
+            this.idPago = idPago;
         }
 
         public int Id { get => id; set => id = value; }
@@ -28,5 +30,6 @@ namespace Modelo
         public int IdTerap { get => idTerap; set => idTerap = value; }
         public DateTime HoraInicio { get => horaInicio; set => horaInicio = value; }
         public int Estado { get => estado; set => estado = value; }
+        public int IdPago { get => idPago; set => idPago = value; }
     }
 }

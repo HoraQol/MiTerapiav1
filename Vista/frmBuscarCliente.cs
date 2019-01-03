@@ -6,10 +6,10 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Modelo;
-using Controlador;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using Modelo;
+using Controlador;
 
 namespace Vista
 {
@@ -25,7 +25,6 @@ namespace Vista
             listaCli = adminCli.obtenerLista();
             actualizarTabla();
         }
-
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.dll", EntryPoint = "SendMessage")]
@@ -37,13 +36,13 @@ namespace Vista
         }
         public void actualizarTabla()
         {
-            dgvCliente.Rows.Clear();
+            dgvClientes.Rows.Clear();
             for(int i=0; i< listaCli.Count; i++)
             {
                 if (filtro(listaCli[i]))
                 {
-                    int rowId = dgvCliente.Rows.Add();
-                    DataGridViewRow row = dgvCliente.Rows[rowId];
+                    int rowId = dgvClientes.Rows.Add();
+                    DataGridViewRow row = dgvClientes.Rows[rowId];
                     row.Cells["colDNI"].Value = listaCli[i].NumDocIdent;
                     row.Cells["colNombre"].Value = listaCli[i].ApPat.ToUpper() + " " +
                         listaCli[i].ApMat.ToUpper() + ", " + listaCli[i].Nombre;
@@ -61,7 +60,7 @@ namespace Vista
                     }
                 }
             }
-            btnSeleccionar.Enabled = (dgvCliente.Rows.Count > 0);
+            btnSeleccionar.Enabled = (dgvClientes.Rows.Count > 0);
         }
         private bool filtro(Cliente cli)
         {
@@ -104,7 +103,7 @@ namespace Vista
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
-            clienteSelec = listaCli[dgvCliente.CurrentCell.RowIndex];
+            clienteSelec = listaCli[dgvClientes.CurrentCell.RowIndex];
             this.Dispose();
         }
 
